@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do-list</title>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+      <div class="box" id="heading">
+          <h1><%= listTitle %></h1>
+      </div>
+    <div class="box">
+        <!-- because everytime we're adding a new item it was just appeending in the same li tag  ,we aslo need to add scriplets in every line to run the javascript -->
+      <%  for (var i=0; i<newListItems.length; i++){ %>
+          <div class="item">
+              <input type="checkbox">
+               <p> <%= newListItems[i] %> </p>
+          </div>
+          <%  } %>
+          <form action="/" method="POST" class="item">
+            <input type="text" name="newItem" placeholder="Add New Item" autocomplete="off"/>
+            <button type="submit" name="list" value= <%=listTitle %>   >+</button>
+          </form>
+    </div>
+   
+
+  </body>
+</html>
