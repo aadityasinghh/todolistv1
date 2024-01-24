@@ -1,5 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const http = require("http");
+
+const port = process.env.PORT || 3000;
 
 const app = express();
 var items = []; //so that we can have items pushed in and not overwite the single item this willl be cleared by understanding scope of the variable its needs to defined outside by everytime wellmake a post reqest at home route the list item will get overwritten hence we need this array
@@ -37,6 +40,6 @@ app.get("/work", function (req, res) {
   res.render("list", { listTitle: "Work List", newListItems: workItems });
 });
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("Server started at port 3000");
 });
